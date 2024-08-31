@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Business Development Organization">
+    <title>CAREBBEA - Business</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.75rem;
+            color: #007bff;
+        }
+
+        nav .nav-link {
+            color: #555;
+            font-weight: 500;
+            padding: 10px 15px;
+            transition: color 0.3s;
+        }
+
+        nav .nav-link:hover {
+            color: #007bff;
+        }
+
+        .hero {
+            background: linear-gradient(to bottom, #007bff, #00c6ff);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+
+        .hero a.btn {
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #007bff;
+            background-color: white;
+            border-radius: 30px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .hero a.btn:hover {
+            background-color: #5a5f64;
+            color: white;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+            text-align: center;
+        }
+
+        #about p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #team .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #team .team-member img {
+            border-radius: 50%;
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+
+        #team .team-member h4 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        #team .team-member p {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        .service-box {
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-box h3 {
+            font-size: 1.75rem;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+
+        .service-box p {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        .service-box i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .testimonial p {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .testimonial .client-name {
+            font-weight: 700;
+            color: #007bff;
+        }
+
+        #blog .blog-post {
+            margin-bottom: 30px;
+        }
+
+        #blog .blog-post img {
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        #blog .blog-post h3 {
+            font-size: 1.75rem;
+            margin-bottom: 10px;
+        }
+
+        #blog .blog-post p {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #00c6ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">CAREBBEA</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services"><i class="fas fa-cogs"></i> Services</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero fade-in">
+        <div class="container">
+            <h1>Empowering Your Business Growth</h1>
+            <p>Your success is our mission. Discover how we can help your business thrive.</p>
+            <a href="#services" class="btn">Explore Our Services</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a business development organization dedicated to helping companies achieve their goals through strategic planning, market analysis, and business growth strategies. With a team of seasoned experts, we provide customized solutions that are designed to drive success and foster growth in the most competitive environments.</p>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-box fade-in">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Business Consulting</h3>
+                        <p>Expert advice to help you navigate complex business challenges. Our consultants bring decades of experience to provide actionable insights and strategies tailored to your specific needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box fade-in">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Market Research</h3>
+                        <p>In-depth analysis of market trends to keep you ahead of the competition. We utilize advanced tools and methodologies to provide comprehensive market assessments that inform your strategic decisions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-box fade-in">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Financial Planning</h3>
+                        <p>Strategic financial planning to ensure sustainable business growth. Our financial experts work closely with you to develop robust financial plans that align with your business goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+  
+
+        <section id="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial fade-in">
+                <p>"Carebbea transformed our business with their exceptional consulting services. Their expertise and strategic advice helped us achieve our goals faster than we imagined."</p>
+                <p class="client-name">— Mr. Shameem, CEO of Tomercon devolopers</p>
+            </div>
+            <div class="testimonial fade-in">
+                <p>"The market research provided by Carebbea was invaluable. We were able to make informed decisions that significantly improved our market position."</p>
+                <p class="client-name">— Elon musk, CEO of Tesla</p>
+            </div>
+        </section>
+
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you would like to learn more about our services or discuss how we can help your business, please contact us at <a href="mailto:carebbea@123.org">info@carebbea.org</a> or fill out the form below.</p>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; Carebbea Business Development Organization. All Rights Reserved.</p>
+        <p>Contact: +91 9876543210 | Email: <a href="mailto:carebbea@123.org">info@carebbea.org</a></p>
+        <p>Location: Kozhikkode, West Hill</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
