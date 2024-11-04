@@ -1,0 +1,29 @@
+<div class="underline-div">
+    <span class="scrolling-text">This is my content</span>
+</div>
+
+<style>
+    .underline-div {
+        font-size: 1.5em;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #3498db; /* Set color and thickness of the underline */
+        width: fit-content;
+        overflow: hidden; /* Hide overflow for the scrolling effect */
+        white-space: nowrap; /* Prevent line breaks */
+    }
+
+    .scrolling-text {
+        display: inline-block;
+        animation: scroll-text 10s linear infinite; /* Smooth continuous scrolling */
+    }
+
+    /* Keyframes for horizontal scrolling */
+    @keyframes scroll-text {
+        0% {
+            transform: translateX(100%); /* Start from the right */
+        }
+        100% {
+            transform: translateX(-100%); /* Move to the left */
+        }
+    }
+</style>

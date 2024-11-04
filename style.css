@@ -1,0 +1,284 @@
+body {
+    max-width: 100%;
+    background-color: rgb(225, 255, 210);
+    margin: 0;
+}
+
+.navbar {
+    background-color: rgba(255, 234, 0, 0.321); /* Navbar background color */
+    color: #fff; /* Text color */
+    text-align: center;
+    padding: 15px 0; /* Padding for the navbar */
+    font-family: Arial, sans-serif;
+    font-size: 1.5em; /* Font size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow to the navbar */
+    border-radius: 0px 0px 25px 25px;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    
+    
+}
+
+.navbar img {
+    float: left;
+}
+
+
+.center-div {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.center-div .background-image{
+    opacity: 0.5;
+}
+.center-div .heading{
+    width: 500px;
+    margin-right: auto;
+
+}
+.center-div .heading h1{
+    font-size: 40px;
+    font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #044e44;
+} 
+
+@media (max-width: 1199px){
+    .center-div .heading h1{
+        display: none;
+    }
+}
+
+@media (max-width: 767px){
+    .center-div .heading h1{
+        display: none;
+    }
+}
+.pappu{
+    margin-top: 120px;
+    margin-right: 40px;
+    height: 500px;
+    width: auto;
+}
+/* Rotating image */
+.rotating-image-container {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotate 20s linear infinite; /* Constant clockwise rotation */
+}
+.kaniyanwrite {
+    position: absolute;
+    width: 500px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rotating-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Keyframes for rotation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Centered text inside the rotating div */
+.center-text {
+  position: absolute;
+  text-align: center;
+  font-size: 2em;
+  color: black;
+}
+
+
+.underline-div {
+    min-width: 100%;
+    font-size: 1.5em;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #3498db; /* Set color and thickness of the underline */
+    width: fit-content;
+    overflow: hidden; /* Hide overflow for the scrolling effect */
+    white-space: nowrap; /* Prevent line breaks **/
+}
+
+.scrolling-text {
+    min-width: 100%;
+    display: inline-block;
+    animation: scroll-text 10s linear infinite; /* Smooth continuous scrolling */
+}
+
+/* Keyframes for horizontal scrolling */
+@keyframes scroll-text {
+    0% {
+        transform: translateX(100%); /* Start from the right */
+    }
+    100% {
+        transform: translateX(-100%); /* Move to the left */
+    }
+}
+
+
+/* Basic styling for the form */
+.question {
+        display: none;
+    }
+    .question.active {
+        display: block;
+    }
+    .button {
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+
+
+.form { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 550px;
+    height: 500px;
+    font-size: 50px;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+            backdrop-filter: blur(10px); /* Background blur effect */
+            -webkit-backdrop-filter: blur(10px); /* For Safari support */
+            text-align: center;
+            color: #ffffff
+}
+.form input label{
+
+   width: fit-content;
+}
+.form input{
+    
+    width: 250px;
+    height: 30px;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-image: url("astrotop.jpg");
+}
+
+
+.button {
+    position: relative;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #00ffff; /* Neon blue border color */
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+/* Animation for neon border */
+.button:before, .button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    pointer-events: none;
+    animation: neon-border 2s linear infinite;
+}
+
+.button:before {
+    border-color: #ff00ff; /* Neon pink */
+    filter: blur(4px);
+}
+
+.button:after {
+    border-color: #00ffff; /* Neon blue */
+    filter: blur(8px);
+    animation-delay: 1s;
+}
+
+/* Neon border animation */
+@keyframes neon-border {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Hover effect */
+.button:hover {
+    color: #00ffff; /* Neon blue text color on hover */
+}
+
+
+
+
+
+
+
+.neon-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Slightly darkens the effect for text visibility */
+    z-index: 0;
+    pointer-events: none;
+}
+
+        /* Neon background effect */
+        .neon-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #00ff00, #ffff00, #ff0000, #0000ff);
+            background-size: 400% 400%;
+            animation: neon-animation 10s ease-in-out infinite;
+        }
+
+        /* Animation keyframes */
+        @keyframes neon-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Image Capture and Pattern Drawing</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="heading">
+    <h1 >Show your palm</h1>
+    </div>
+
+    <!-- Video feed and canvas for live hand detection and pattern drawing -->
+<div class="videoo">
+    <video id="video" autoplay playsinline></video>
+    <canvas id="canvas">please wait</canvas>
+</div>
+    <div class="captureButton">
+    <button id="captureButton" class="button-85">Capture</button>
+    </div>
+    
+    <!-- Display the captured image below the canvas -->
+    <h2 id="imagehead">Captured Hand Image</h2>
+    <div class="capturedImage">
+    <img id="capturedImage" src="" alt="" onerror="handleImageError()">
+    <a href="3.html"><button class="button-85" id="confirmbutton">Next</button></a>
+    </div>
+
+    <script src="script2.js">
+        
+    </script>
+</body>
+</html>

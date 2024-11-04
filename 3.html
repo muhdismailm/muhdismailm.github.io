@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Fullscreen Buttons</title>
+    <style>
+        /* General styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #0d0d0d;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            position: absolute;
+            top: 20px; /* Positioning the heading */
+            width: 100%;
+        }
+
+        /* Container for buttons */
+        .button-container {
+            position: absolute;
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+            overflow: hidden; /* Hide overflow */
+        }
+
+        /* Button styling */
+        .button {
+            display: inline-block;
+            padding: 50px;
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: uppercase;
+            text-decoration: none; /* Remove underline */
+            border: 2px solid transparent;
+            border-radius: 50%;
+            position: absolute; /* Position absolute for random movement */
+            cursor: pointer;
+            transition: color 0.3s ease;
+            user-select: none; /* Prevent text selection */
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Neon effect */
+        .button::before, .button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transition: opacity 0.3s ease;
+            filter: blur(4px);
+            opacity: 0;
+        }
+
+        .button:hover::before {
+            opacity: 0.5;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .button:hover::after {
+            opacity: 1;
+            border: 2px solid rgba(255, 255, 255, 1);
+        }
+
+        /* Unique colors for each button */
+        .button-education { background-color: #4CAF50; }
+        .button-love { background-color: #FF4081; }
+        .button-job { background-color: #2196F3; }
+        .button-future { background-color: #FFD700; }
+
+    </style>
+</head>
+<body>
+
+    <h1>എന്താ മോനെ അറിയേണ്ടത്</h1>
+    <div class="button-container" id="button-container">
+        <a href="./education.html" class="button button-education">Education</a>
+        <a href="./love.html" class="button button-love">Love</a>
+        <a href="./job.html" class="button button-job">Job</a>
+        <a href="./future.html" class="button button-future">Future</a>
+        <a href="./economy.html" class="button button-future">Economy</a>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.button');
+        const containerWidth = window.innerWidth; // Full viewport width
+        const containerHeight = window.innerHeight; // Full viewport height
+        const speed = 9; // Speed of button movement
+        const velocity = Array.from({ length: buttons.length }, () => ({
+            x: (Math.random() - 0.5) * speed,
+            y: (Math.random() - 0.5) * speed
+        }));
+
+        // Set random initial positions
+        buttons.forEach((button, index) => {
+            const x = Math.random() * (containerWidth - 100); // 100 is button width
+            const y = Math.random() * (containerHeight - 100); // 100 is button height
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        });
+
+        function moveButtons() {
+            buttons.forEach((button, index) => {
+                let rect = button.getBoundingClientRect();
+                let newX = rect.left + velocity[index].x;
+                let newY = rect.top + velocity[index].y;
+
+                // Boundary detection
+                if (newX < 0 || newX + rect.width > containerWidth) {
+                    velocity[index].x *= -1; // Reverse X direction
+                    newX = rect.left + velocity[index].x; // Update newX after reversing
+                }
+                if (newY < 0 || newY + rect.height > containerHeight) {
+                    velocity[index].y *= -1; // Reverse Y direction
+                    newY = rect.top + velocity[index].y; // Update newY after reversing
+                }
+
+                // Collision detection with other buttons
+                buttons.forEach((otherButton, otherIndex) => {
+                    if (index !== otherIndex) {
+                        let otherRect = otherButton.getBoundingClientRect();
+                        if (
+                            rect.left < otherRect.right &&
+                            rect.right > otherRect.left &&
+                            rect.top < otherRect.bottom &&
+                            rect.bottom > otherRect.top
+                        ) {
+                            // Reverse direction on collision
+                            velocity[index].x *= -1;
+                            velocity[index].y *= -1;
+                            velocity[otherIndex].x *= -1;
+                            velocity[otherIndex].y *= -1;
+                        }
+                    }
+                });
+
+                // Update button position
+                button.style.left = `${newX}px`;
+                button.style.top = `${newY}px`;
+            });
+        }
+
+        setInterval(moveButtons, 100); // Move buttons every 100 ms
+    </script>
+
+</body>
+</html>

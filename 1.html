@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Rotating Image</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="navbar">
+    <img src="kaniyan2.png" alt="" width="150" height="auto">
+    Hey buddy, find your possible future here
+</div>
+  <div class="neon-background"></div>
+  <div class="neon-overlay"></div>
+  <!-- Centered Div with Rotating Image -->
+  <div class="center-div">
+    <div class="heading">
+    <h1>
+      "Unveil the secrets hidden in your hands—discover insights about love, career, and your life's unique journey with our palm reading guide."
+    </h1>
+  </div>
+  <img src="pappu.png" alt="" class="pappu">
+    <div class="rotating-image-container">
+      <img src="signs.png" alt="Rotating Image" class="rotating-image">
+    </div>
+    <img src="kaniyan2.png" class="kaniyanwrite" height="450" width="auto">
+  </div>
+  <div class="underline-div">
+    <span class="scrolling-text">Bhoooooooooooooooooooooooooooooooooooooooooooom.............</span>
+</div>
+
+  <div class="container">
+<div class="form">
+  
+  <form id="questionForm">
+    <!-- Question 1 -->
+    <div class="question active" id="question1">
+        <label for="answer1">What is your sweet name</label><br>
+        <input type="text" id="answer1" name="answer1" required>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="question2">
+        <label for="answer2">First day on Earth </label><br>
+        <input type="date" id="answer2" name="answer2" required>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="question3">
+        <label for="answer3">Single or Commited </label><br>
+        <input type="radio" id="answer3" name="answer3" required>
+        <label for="answer3">Single </label><br>
+        <input type="radio" id="answer3" name="answer3" required>
+        <label for="answer3"> commited </label>
+        
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="question4">
+        <label for="answer3">Male or Female </label><br>
+        <input type="radio" id="answer34" name="answer34" required>
+        <label for="answer3">Male</label><br>
+        <input type="radio" id="answer34" name="answer34" required>
+        <label for="answer3"> Female </label>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="question5">
+        <label for="answer5">What is your dream job?</label><br>
+        <input type="text" id="answer5" name="answer5" required>
+    </div>
+
+    <button type="button" class="button" id="nextButton" onclick="nextQuestion()">Next</button>
+    <button type="submit" class="button" style="display: none;" id="submitButton"onclick="redirect()">Submit</button>
+    
+</form>
+</div>
+</div>
+<script src="script.js">
+</script>
+<script>
+  function redirect() {
+    window.location.href = './2.html'; // Change this to your desired URL
+  }
+</script>
+</body>
+</html>
